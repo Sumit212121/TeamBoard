@@ -4,6 +4,7 @@
     box-sizing: border-box;
 }
 
+
 body {
     font-family: Arial, sans-serif;
     background: #f4f6f8;
@@ -11,73 +12,437 @@ body {
     padding: 30px;
 }
 
-header {
-    background: #2563eb;
+
+/* Header */
+
+.header {
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
     color: white;
     padding: 30px;
-    border-radius: 12px;
+    border-radius: 14px;
     margin-bottom: 25px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-header h1 {
+
+.header h1 {
+    font-size: 36px;
     margin-bottom: 8px;
 }
 
-header p {
+
+.header p {
     color: #dbeafe;
+    font-size: 16px;
 }
 
-main {
+
+.header-badge {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 10px 16px;
+    border-radius: 25px;
+    font-size: 14px;
+}
+
+
+/* Dashboard */
+
+.dashboard {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 2fr 1fr 1fr;
     gap: 20px;
 }
+
+
+/* Cards */
 
 .card {
     background: white;
     padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    border-radius: 14px;
+
+    box-shadow:
+        0 4px 15px rgba(0, 0, 0, 0.07);
 }
+
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
 
 .card h2 {
-    margin-bottom: 10px;
     color: #2563eb;
+    margin-bottom: 5px;
 }
 
-.card p {
-    color: #666;
+
+.card-header p {
+    color: #777;
+    font-size: 14px;
 }
 
-@media (max-width: 768px) {
-    body {
-        padding: 20px;
-    }
 
-    main {
-        grid-template-columns: 1fr;
-    }
+/* Task Count */
+
+.count-badge {
+    background: #dbeafe;
+    color: #1d4ed8;
+    padding: 7px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
 }
+
+
+/* Add Task */
+
+.task-input {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+
+.task-input input {
+    flex: 1;
+    padding: 13px 15px;
+
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+
+    outline: none;
+    font-size: 14px;
+}
+
+
+.task-input input:focus {
+    border-color: #2563eb;
+}
+
+
+.task-input button {
+    border: none;
+    background: #2563eb;
+    color: white;
+
+    padding: 12px 18px;
+    border-radius: 8px;
+
+    cursor: pointer;
+    font-weight: bold;
+}
+
+
+.task-input button:hover {
+    background: #1d4ed8;
+}
+
+
+/* Tasks */
+
 .task {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
     padding: 14px 16px;
     margin-top: 12px;
+
     background: #f5f7fa;
+
     border-radius: 8px;
+
     border-left: 4px solid #2563eb;
 }
 
-.task strong {
+
+.task-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+
+.task-info strong {
     color: #1f2937;
 }
 
-.task span {
+
+.task.completed {
+    opacity: 0.65;
+}
+
+
+.task.completed strong {
+    text-decoration: line-through;
+}
+
+
+.status {
     padding: 5px 10px;
+
     border-radius: 20px;
+
     background: #dbeafe;
     color: #1d4ed8;
+
+    font-size: 12px;
+    font-weight: bold;
+}
+
+
+.status.completed {
+    background: #dcfce7;
+    color: #15803d;
+}
+
+
+.task-actions {
+    display: flex;
+    gap: 6px;
+}
+
+
+.task-actions button {
+    border: none;
+    padding: 6px 9px;
+
+    border-radius: 6px;
+
+    cursor: pointer;
+    font-size: 12px;
+}
+
+
+.complete-btn {
+    background: #dcfce7;
+    color: #15803d;
+}
+
+
+.delete-btn {
+    background: #fee2e2;
+    color: #dc2626;
+}
+
+
+/* Team Members */
+
+.member {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 15px 0;
+
+    border-bottom: 1px solid #eee;
+}
+
+
+.member:last-child {
+    border-bottom: none;
+}
+
+
+.member-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+
+.avatar {
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #2563eb;
+    color: white;
+
+    font-weight: bold;
+}
+
+
+.avatar.practice {
+    background: #7c3aed;
+}
+
+
+.member-info strong {
+    display: block;
+}
+
+
+.member-info span {
+    display: block;
+    color: #777;
     font-size: 13px;
-    font-weight: 600;
+    margin-top: 3px;
+}
+
+
+.online {
+    color: #16a34a;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+
+/* Git Activity */
+
+.activity {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 13px 0;
+
+    border-bottom: 1px solid #eee;
+}
+
+
+.activity:last-child {
+    border-bottom: none;
+}
+
+
+.activity-icon {
+    width: 30px;
+    height: 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #dcfce7;
+    color: #15803d;
+
+    font-weight: bold;
+}
+
+
+.activity strong {
+    display: block;
+    font-size: 14px;
+}
+
+
+.activity span {
+    display: block;
+    color: #777;
+    font-size: 12px;
+    margin-top: 3px;
+}
+
+
+/* Empty State */
+
+.empty {
+    text-align: center;
+    color: #888;
+    padding: 25px;
+}
+
+
+/* Footer */
+
+footer {
+    text-align: center;
+    color: #888;
+
+    margin-top: 30px;
+
+    font-size: 13px;
+}
+
+
+/* Responsive */
+
+@media (max-width: 1000px) {
+
+    .dashboard {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .tasks-card {
+        grid-column: span 2;
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    body {
+        padding: 15px;
+    }
+
+
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+
+    .header h1 {
+        font-size: 30px;
+    }
+
+
+    .dashboard {
+        grid-template-columns: 1fr;
+    }
+
+
+    .tasks-card {
+        grid-column: span 1;
+    }
+
+
+    .task-input {
+        flex-direction: column;
+    }
+
+
+    .task-input button {
+        width: 100%;
+    }
+
+}
+
+
+@media (max-width: 450px) {
+
+    .card {
+        padding: 18px;
+    }
+
+
+    .task {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+
+    .task-actions {
+        width: 100%;
+    }
+
 }
