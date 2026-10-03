@@ -1,47 +1,58 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TeamBoard</title>
-    <link rel="stylesheet" href="style.css">
-</head>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-<body>
-
+  <body>
     <header>
-        <h1>TeamBoard</h1>
-        <p>Team Collaboration Dashboard</p>
+      <h1>TeamBoard</h1>
+      <p>Team Collaboration Dashboard</p>
     </header>
 
     <main>
+      <section class="card">
+        <h2>📋 Tasks</h2>
 
-        <section class="card">
-            <h2>📋 Tasks</h2>
-            <p>Manage your team's tasks.</p>
-        </section>
+        <div class="task">
+          <strong>Build TeamBoard Dashboard</strong>
+          <span>In Progress</span>
+        </div>
 
-        <section class="card">
-            <h2>👥 Team Members</h2>
+        <div class="task">
+          <strong>Review Team Members</strong>
+          <span>Completed</span>
+        </div>
 
-            <div class="member">
-                <strong>Sumit</strong>
-                <span>Project Owner</span>
-            </div>
+        <div class="task">
+          <strong>Setup Git Workflow</strong>
+          <span>Completed</span>
+        </div>
+      </section>
 
-            <div class="member">
-                <strong>Practice</strong>
-                <span>Developer</span>
-            </div>
-        </section>
+      <section class="card">
+        <h2>👥 Team Members</h2>
 
-        <section class="card">
-            <h2>🚀 Git Activity</h2>
-            <p>Track GitHub collaboration.</p>
-        </section>
+        <div class="member">
+          <strong>Sumit</strong>
+          <span>Project Owner</span>
+        </div>
 
+        <div class="member">
+          <strong>Practice</strong>
+          <span>Developer</span>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>🚀 Git Activity</h2>
+        <p>Track GitHub collaboration.</p>
+      </section>
     </main>
 
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
